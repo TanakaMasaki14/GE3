@@ -1,5 +1,4 @@
 #pragma once
-#include <windows.h>
 #include <wrl.h>
 
 #include "WinApp.h"
@@ -33,6 +32,13 @@ public: //Input固有のメンバ関数
 	/// <param name="keyNum">キーの番号</param>
 	/// <returns>今押されたか</returns>
 	bool ifKeyTrigger(BYTE keyNum);
+
+	/// <summary>
+	/// キーが今離されたかを確認
+	/// </summary>
+	/// <param name="keyNum">キーの番号</param>
+	/// <returns>今離されたか</returns>
+	bool ifKeyRelease(BYTE keyNum);
 
 private: //よく使うメンバ変数
 	//DirectInputのインスタンス

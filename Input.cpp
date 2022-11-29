@@ -63,3 +63,15 @@ bool Input::ifKeyTrigger(BYTE keyNum) {
 	//基本はfalse
 	return false;
 }
+
+bool Input::ifKeyRelease(BYTE keyNum) {
+	//1F前にキーを押されていることを確認
+	if (keyPre_[keyNum]) {
+		//指定のキーを押していなかったら、trueを返す
+		if (!key_[keyNum]) {
+			return true;
+		}
+	}
+	//基本はfalse
+	return false;
+}

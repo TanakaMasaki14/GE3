@@ -27,7 +27,7 @@ public: //固有のメンバ関数
 public: //ゲッター
 
 	HINSTANCE GetHInstance() const { return w_.hInstance; }
-	HWND GetHwnd() const {return hwnd_;}
+	HWND GetHwnd() const { return hwnd_; }
 
 public: //外部で使える定数
 
