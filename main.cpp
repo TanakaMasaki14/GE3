@@ -1164,7 +1164,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 
 	const wchar_t* texImgs[kTextureCount] =
 	{
-		L"Resources/texture.png",
+		L"Resources/texture.jpg",
 		L"Resources/reimu.png",
 	};
 

@@ -31,7 +31,7 @@ void WinApp::Initialize(){
 
 	//ウィンドウハンドル
 	hwnd_ = CreateWindow(w_.lpszClassName,
-		L"LE2B_01_アカイケ_カケル_GE3",
+		L"LE2B_14_タナカ_マサキ_GE3",
 		WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT,
 		CW_USEDEFAULT,
