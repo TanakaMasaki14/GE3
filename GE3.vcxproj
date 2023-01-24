@@ -141,26 +141,78 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="CollisionPrimitive.cpp" />
+    <ClCompile Include="ConstBuffTransform.cpp" />
+    <ClCompile Include="DebugText.cpp" />
+    <ClCompile Include="DirectX.cpp" />
+    <ClCompile Include="Draw.cpp" />
+    <ClCompile Include="ImGuiManager.cpp" />
+    <ClCompile Include="KeyboardInput.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="LightManager.cpp" />
+    <ClCompile Include="M4.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="WinApp.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="PointLight.cpp" />
+    <ClCompile Include="Primitive.cpp" />
+    <ClCompile Include="ProjectionMat.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="SpriteCommon.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Util.cpp" />
+    <ClCompile Include="Vec2.cpp" />
+    <ClCompile Include="Vec3.cpp" />
+    <ClCompile Include="Vec4.cpp" />
+    <ClCompile Include="ViewMat.cpp" />
+    <ClCompile Include="WindowsApp.cpp" />
+    <ClCompile Include="WorldMat.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="Struct.h" />
-    <ClInclude Include="WinApp.h" />
+    <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionPrimitive.h" />
+    <ClInclude Include="ConstBuffTransform.h" />
+    <ClInclude Include="DebugText.h" />
+    <ClInclude Include="DirectX.h" />
+    <ClInclude Include="Draw.h" />
+    <ClInclude Include="ImGuiManager.h" />
+    <ClInclude Include="KeyboardInput.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="LightManager.h" />
+    <ClInclude Include="M4.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="PointLight.h" />
+    <ClInclude Include="Primitive.h" />
+    <ClInclude Include="ProjectionMat.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Sound.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteCommon.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Util.h" />
+    <ClInclude Include="Vec2.h" />
+    <ClInclude Include="Vec3.h" />
+    <ClInclude Include="Vec4.h" />
+    <ClInclude Include="ViewMat.h" />
+    <ClInclude Include="WindowsApp.h" />
+    <ClInclude Include="WorldMat.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Basic.hlsli" />
+    <ProjectReference Include="DirectXTex\DirectXTex_Desktop_2022_Win10.vcxproj">
+      <Project>{371b9fa9-4c90-4ac6-a123-aced756d6c77}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="BasicPS.hlsl">
+    <FxCompile Include="OBJPixelShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
     </FxCompile>
-    <FxCompile Include="BasicVS.hlsl">
+    <FxCompile Include="OBJVertexShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
@@ -168,9 +220,10 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="DirectXTex\DirectXTex_Desktop_2022_Win10.vcxproj">
-      <Project>{371b9fa9-4c90-4ac6-a123-aced756d6c77}</Project>
-    </ProjectReference>
+    <None Include="OBJShaderHeader.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GE3.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
