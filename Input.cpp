@@ -1,65 +1,56 @@
 #include "Input.h"
-#include <cassert>
+#include<wrl.h>
 
-#pragma comment(lib,"dinput8.lib")
-#pragma comment(lib,"dxguid.lib")
 
-void Input::Initialize(WinApp* winApp) {
-	HRESULT result;
+#include<cassert>
+using namespace Microsoft::WRL;
 
-	winApp_ = winApp;
+void Input::Initialize(WindowsAPI* windowsApi)
+{
+	HRESULT result_;
+	//借りてきたWinAppのインスタンスを記録
+	this->windowsApi = windowsApi;
 
-	//DirectInputの初期化
-	result = DirectInput8Create(
-		winApp->GetHInstance(), DIRECTINPUT_VERSION, IID_IDirectInput8,
+	//DirectInputのインスタンス生成
+	result_ = DirectInput8Create(
+		windowsApi->GetHInstance(), DIRECTINPUT_VERSION, IID_IDirectInput8,
 		(void**)&directInput, nullptr);
-	assert(SUCCEEDED(result));
-
-	//キーボードデバイスの生成
-	result = directInput->CreateDevice(
-		GUID_SysKeyboard, &keyboard, NULL);
-	assert(SUCCEEDED(result));
-
-	//入力データの形式のセット
-	result = keyboard->SetDataFormat(
-		&c_dfDIKeyboard);//標準形式
-	assert(SUCCEEDED(result));
-
+	assert(SUCCEEDED(result_));
+	//キーボードデバイス生成
+	result_ = directInput->CreateDevice(GUID_SysKeyboard, &keyboard, NULL);
+	assert(SUCCEEDED(result_));
+	//入力データ形式のセット
+	result_ = keyboard->SetDataFormat(&c_dfDIKeyboard);//標準形式
+	assert(SUCCEEDED(result_));
 	//排他制御レベルのセット
-	result = keyboard->SetCooperativeLevel(
-		winApp->GetHwnd(), DISCL_FOREGROUND | DISCL_NONEXCLUSIVE | DISCL_NOWINKEY);
-	assert(SUCCEEDED(result));
+	result_ = keyboard->SetCooperativeLevel(
+		windowsApi->GetHwnd(), DISCL_FOREGROUND | DISCL_NONEXCLUSIVE | DISCL_NOWINKEY);
+	assert(SUCCEEDED(result_));
 }
 
-void Input::Update() {
-	HRESULT result;
-
-	//前回のキー入力を保存
-	memcpy(keyPre_, key_, sizeof(key_));
-
+void Input::Update()
+{
 	//キーボード情報の取得開始
-	result = keyboard->Acquire();
+	keyboard->Acquire();
+	//前フレームのキー情報を保存
+	for (int i = 0; i < 256; i++) {
+		oldkey[i] = key[i];
+	}
 	//全キーの入力状態を取得する
-	result = keyboard->GetDeviceState(sizeof(key_), key_);
+	keyboard->GetDeviceState(sizeof(key), key);
 }
 
-bool Input::ifKeyPress(BYTE keyNum) {
-	//指定のキーを押していたら、trueを返す
-	if (key_[keyNum]) {
-		return true;
-	}
-	//基本はfalse
-	return false;
+bool Input::IsTrigger(BYTE key_)
+{
+	return (key[key_] && !oldkey[key_]);
 }
 
-bool Input::ifKeyTrigger(BYTE keyNum) {
-	//1F前にキーを押していないことを確認
-	if (!keyPre_[keyNum]) {
-		//指定のキーを押していたら、trueを返す
-		if (key_[keyNum]) {
-			return true;
-		}
-	}
-	//基本はfalse
-	return false;
+bool Input::IsPress(BYTE key_)
+{
+	return key[key_];
+}
+
+bool Input::IsRelease(BYTE key_)
+{
+	return (!key[key_] && oldkey[key_]);
 }

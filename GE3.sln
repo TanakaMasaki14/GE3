@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GE3", "GE3.vcxproj", "{BD45
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectXTex", "DirectXTex\DirectXTex_Desktop_2022_Win10.vcxproj", "{371B9FA9-4C90-4AC6-A123-ACED756D6C77}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgui", "imgui\imgui.vcxproj", "{EA7C6F3A-C810-4546-882E-AB761691105E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM64 = Debug|ARM64
@@ -71,6 +73,30 @@ Global
 		{371B9FA9-4C90-4AC6-A123-ACED756D6C77}.Release|x64.Build.0 = Release|x64
 		{371B9FA9-4C90-4AC6-A123-ACED756D6C77}.Release|x86.ActiveCfg = Release|Win32
 		{371B9FA9-4C90-4AC6-A123-ACED756D6C77}.Release|x86.Build.0 = Release|Win32
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|ARM64.ActiveCfg = Debug|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|ARM64.Build.0 = Debug|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|Gaming.Desktop.x64.ActiveCfg = Debug|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|Gaming.Desktop.x64.Build.0 = Debug|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|Gaming.Xbox.Scarlett.x64.ActiveCfg = Debug|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|Gaming.Xbox.Scarlett.x64.Build.0 = Debug|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|Gaming.Xbox.XboxOne.x64.ActiveCfg = Debug|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|Gaming.Xbox.XboxOne.x64.Build.0 = Debug|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|x64.ActiveCfg = Debug|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|x64.Build.0 = Debug|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|x86.ActiveCfg = Debug|Win32
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Debug|x86.Build.0 = Debug|Win32
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|ARM64.ActiveCfg = Release|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|ARM64.Build.0 = Release|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|Gaming.Desktop.x64.ActiveCfg = Release|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|Gaming.Desktop.x64.Build.0 = Release|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|Gaming.Xbox.Scarlett.x64.ActiveCfg = Release|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|Gaming.Xbox.Scarlett.x64.Build.0 = Release|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|Gaming.Xbox.XboxOne.x64.ActiveCfg = Release|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|Gaming.Xbox.XboxOne.x64.Build.0 = Release|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|x64.ActiveCfg = Release|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|x64.Build.0 = Release|x64
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|x86.ActiveCfg = Release|Win32
+		{EA7C6F3A-C810-4546-882E-AB761691105E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
